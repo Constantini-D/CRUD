@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="row">
+        <table class = "table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Aniversario</th>
+                    <th scope="col">Ação</th>
+                </tr>
+            </thead>
+            <thead>
+            <tbody>
+            {% for usuario in usuarios %}
+                <tr>
+                    <td scope ="row">{{ usuario.id }}</td>
+                    <td scope ="row">{{ usuario.nome }}</td>
+                    <td scope ="row">{{ usuario.email }}</td>
+                    <td scope ="row">{{ usuario.aniversario }}</td>
+                    <td scope="row">
+                        <a class="btn btn-warning" href="#">Editar</a>
+                        <a class="btn btn-danger" href="#">Deletar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+            </thead>
+        </table>
+    </div>
+{% endblock%}
