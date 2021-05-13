@@ -32,3 +32,31 @@ class DeleteUsuarioView(DeleteView):
     template_name = 'usuario_del.html'
     fields = ['nome', 'email', 'aniversario']
     success_url = reverse_lazy('index')
+
+
+class ProdutoView(ListView):
+    models = Produto
+    template_name = 'produto.html'
+    queryset = Produto.objects.all()
+    context_object_name = 'produtos'
+
+
+class CreateProdutoView(CreateView):
+    model = Produto
+    template_name = 'produto_form.html'
+    fields = ['nome', 'preco']
+    success_url = reverse_lazy('produtos')
+
+
+class DeleteProdutoView(DeleteView):
+    model = Produto
+    template_name = 'produto_del.html'
+    fields = ['nome', 'preco']
+    success_url = reverse_lazy('produtos')
+
+
+class UpdateProdutoView(UpdateView):
+    model = Produto
+    template_name = 'produto_form.html'
+    fields = ['nome', 'preco']
+    success_url = reverse_lazy('produtos')

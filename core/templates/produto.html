@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="row">
+        <table class = "table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Preço</th>
+                </tr>
+            </thead>
+            <thead>
+            <tbody>
+            {% for produto in produtos %}
+                <tr>
+                    <td scope ="row">{{ produto.id }}</td>
+                    <td scope ="row">{{ produto.nome }}</td>
+                    <td scope ="row">{{ produto.preco }}</td>
+                    <td scope="row">
+                        <a class="btn btn-warning" href="{% url 'upd_produto' produto.pk%}" >Editar</a>
+                        <a class="btn btn-danger" href="{% url 'del_produto' produto.pk%}">Deletar</a>
+
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+            </thead>
+        </table>
+        <div class="container">
+            <div class="row"  align="center">
+                    <a class="btn btn-secondary" href="{% url 'index' %}" align="center">Ver Usuários</a>
+                    <a class="btn btn-primary" href="{% url 'cadastrar_produto' %}" align="center">Cadastrar Produto</a>
+            </div>
+        </div>
+    </div>
+{% endblock%}
