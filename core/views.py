@@ -18,3 +18,17 @@ class CreateUsuarioView(CreateView):
     template_name = 'usuario_form.html'
     fields = ['nome', 'email', 'aniversario']
     success_url = reverse_lazy('index')
+
+
+class UpdateUsuarioView(UpdateView):
+    model = Usuario
+    template_name = 'usuario_del.html'
+    fields = ['nome', 'email', 'aniversario']
+    success_url = reverse_lazy('index')
+
+
+class DeleteUsuarioView(DeleteView):
+    model = Usuario
+    template_name = 'usuario_del.html'
+    fields = ['nome', 'email', 'aniversario']
+    success_url = reverse_lazy('index')
