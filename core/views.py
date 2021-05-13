@@ -22,7 +22,7 @@ class CreateUsuarioView(CreateView):
 
 class UpdateUsuarioView(UpdateView):
     model = Usuario
-    template_name = 'usuario_del.html'
+    template_name = 'usuario_form.html'
     fields = ['nome', 'email', 'aniversario']
     success_url = reverse_lazy('index')
 
