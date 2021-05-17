@@ -9,7 +9,9 @@ from .forms import ProdutoModelForm, UsuarioModelForm
 class IndexView(ListView):
     models = Usuario
     template_name = 'index.html'
+    paginate_by = 5
     queryset = Usuario.objects.all()
+    ordering = 'id'
     context_object_name = 'usuarios'
 
 
@@ -37,6 +39,8 @@ class DeleteUsuarioView(DeleteView):
 class ProdutoView(ListView):
     models = Produto
     template_name = 'produto.html'
+    paginate_by = 5
+    ordering = 'id'
     queryset = Produto.objects.all()
     context_object_name = 'produtos'
 
