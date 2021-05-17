@@ -13,3 +13,4 @@ urlpatterns = [
     path('<int:pk>/produto_update/', UpdateProdutoView.as_view(), name='upd_produto'),
 
 ]
+

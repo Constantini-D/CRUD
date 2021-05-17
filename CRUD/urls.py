@@ -20,3 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls'))
 ]
+
+admin.AdminSite.site_header = 'Site CRUD'
+admin.AdminSite.site_title = 'Admin-SITE-CRUD'
+admin.AdminSite.index_title = 'Cadastros do sistema CRUD'
